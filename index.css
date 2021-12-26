@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+ :root {
+    --background: white;
+    --primary: #ff1ead;
+    --card-size: 300px;
+    --card-width: calc(var(--card-size) * 1.7);
+    --img-container-size: calc(var(--card-width) * 0.37);
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    padding: 1rem;
+    background: var(--background);
+    font-family: 'Source Code Pro', monospace;
+    text-rendering: optimizelegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card {
+    padding: 1rem;
+    width: var(--card-width);
+    height: var(--card-size);
+    border-radius: 0.75rem;
+    box-shadow: 0 22px 70px 4px rgba(0, 0, 0, 0.56), 0 0 0 1px rgba(0, 0, 0, 0.3);
+    background: black;
+    display: grid;
+    column-gap: 10px;
+    grid-template-columns: 40% auto;
+    color: white;
+    align-items: center;
+    will-change: transform;
+    transition: transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), box-shadow 0.25s cubic-bezier(0.4, 0.0, 0.2, 1);
+}
+
+.card:hover {
+    transform: scale(1.1);
+    box-shadow: 0 32px 80px 14px rgba(0, 0, 0, 0.36), 0 0 0 1px rgba(0, 0, 0, 0.3);
+}
+
+.card-details {
+    font-size: 1.25rem;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+}
+
+.item>.label {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.card-avatar {
+    display: grid;
+    place-items: center;
+    border-radius: 100%;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50%;
+    width: var(--img-container-size);
+    height: var(--img-container-size);
+}
+
+.card-avatar>img {
+    display: inline;
+    margin: 0 auto;
+    height: 100%;
+    width: 100%;
+}
+
+.loading-svg {
+    height: 100px;
+    width: 100px;
+    position: absolute;
+}
